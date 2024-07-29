@@ -31,8 +31,8 @@ Update the Kubeconfig
 
 Apply environment variables configmap and secret, remember to replace actual secret value
 
-    kubectl apply -f deployment/env-configmap.yaml
-    kubectl apply -f deployment/env-secret.yaml
+    kubectl apply -f env-configmap.yaml
+    kubectl apply -f env-secret.yaml
 
 Deploy the database
 
@@ -53,7 +53,7 @@ Configure Continous Integraion using AWS CodeBuild
 
 Deploy the application, the deployment will try to pull the latest image from AWS ECR repository to run.
 
-    kubectl apply -f deployment/coworking-deployment.yaml
+    kubectl apply -f coworking-deployment.yaml
 
 Verify the Deployment
 
