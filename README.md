@@ -34,13 +34,13 @@ Apply environment variables configmap and secret, remember to replace actual sec
     kubectl apply -f env-configmap.yaml
     kubectl apply -f env-secret.yaml
 
-Deploy the database
+Deploy the database, note that the "accessModes" in the above pvc.yaml and pv.yaml files should match
 
     kubectl apply -f pvc.yaml
     kubectl apply -f pv.yaml
     kubectl apply -f postgresql-deployment.yaml
 
-Configure Continous Integraion using AWS CodeBuild
+Configure Continous Integration using AWS CodeBuild
  - Create an Amazon ECR repository using AWS console.
 
  - Create an Amazon CodeBuild project that is connected to the project's GitHub repository.
@@ -51,7 +51,7 @@ Configure Continous Integraion using AWS CodeBuild
 
  - CodeBuild will build the project docker image and push it to AWS ECR repository.
 
-Deploy the application, the deployment will try to pull the latest image from AWS ECR repository to run.
+Deploy the application, the deployment service will try to pull the latest image from AWS ECR repository to run.
 
     kubectl apply -f coworking-deployment.yaml
 
